@@ -1,0 +1,19 @@
+﻿public enum GameStates
+{
+    Setup,
+    Inivtes,
+    PlayerConfirmation,
+    Greeting,
+    Rolling,
+    WarmUps,
+    Banning,
+    Picking,
+    PlayerSwapping,
+    StartMap,
+    MapRunning,
+    MapEnding,
+    MapAnalysis,
+    MatchAnalysis,
+    MatchEnding,
+    MatchConclusion
+}
