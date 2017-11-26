@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
         currentState = GameStates.Setup;
 
         string ircUserName = "[_Yui_]";
-        string ircAuthKey = "52af51d2";
+        string ircAuthKey = "";
 
         mp1 = new IrcClient("irc.ppy.sh", 6667, ircUserName, ircAuthKey);
         mp1.joinRoom("osu");
