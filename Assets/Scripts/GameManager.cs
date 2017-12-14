@@ -6,19 +6,26 @@ public class GameManager : MonoBehaviour
 {
     public GameStates currentState;
     IrcClient mp1;
+    
 	void Start()
     {
-        currentState = GameStates.Setup;
+        Debug.Log("Start");
+        Spreadsheet sh = new Spreadsheet("https://docs.google.com/spreadsheets/d/1-8Ibp7Qnk6jKYGI4Voy2bWDBbegZQFgFmCfh0U5F30Q/edit#gid=0");
+    
+       /* currentState = GameStates.Setup;
 
         string ircUserName = "[_Yui_]";
         string ircAuthKey = "";
 
         mp1 = new IrcClient("irc.ppy.sh", 6667, ircUserName, ircAuthKey);
         mp1.joinRoom("osu");
+        
+        */
     }
 	
 	void Update()
     {
+        /*
         if(!mp1.tcpClient.Connected)
         {
             mp1.connect();
@@ -73,5 +80,6 @@ public class GameManager : MonoBehaviour
             case GameStates.MatchConclusion:
                 break;
         }
+        */
 	}
 }
