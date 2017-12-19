@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.IO;
 using OsuTournamentBot;
 
@@ -11,16 +12,22 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Start");
         Spreadsheet sh = new Spreadsheet("https://docs.google.com/spreadsheets/d/1-8Ibp7Qnk6jKYGI4Voy2bWDBbegZQFgFmCfh0U5F30Q/edit#gid=0");
-    
-       /* currentState = GameStates.Setup;
-
-        string ircUserName = "[_Yui_]";
-        string ircAuthKey = "";
-
-        mp1 = new IrcClient("irc.ppy.sh", 6667, ircUserName, ircAuthKey);
-        mp1.joinRoom("osu");
+        StartCoroutine(sh.GetValue("A1", "B1"));
+        List<string> x = new List<string>();
+        x.Add("Value changed");
+        x.Add("To something else!");
+        StartCoroutine(sh.WriteValue("A1", "B1", x));
+        StartCoroutine(sh.GetValue("a1", "b1"));
         
-        */
+        /* currentState = GameStates.Setup;
+ 
+         string ircUserName = "[_Yui_]";
+         string ircAuthKey = "";
+ 
+         mp1 = new IrcClient("irc.ppy.sh", 6667, ircUserName, ircAuthKey);
+         mp1.joinRoom("osu");
+         
+         */
     }
 	
 	void Update()

@@ -57,7 +57,9 @@
     <Compile Include="Assets\Scripts\DataObjects\Team.cs" />
     <Compile Include="Assets\Scripts\Enums\GameStates.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GSheets\OAuth2.cs" />
     <Compile Include="Assets\Scripts\GSheets\Spreadsheet.cs" />
+    <Compile Include="Assets\Scripts\GSheets\SpreadsheetValuesResponse.cs" />
     <Compile Include="Assets\Scripts\Logic\Match.cs" />
     <Compile Include="Assets\Scripts\Logic\SetupMatch.cs" />
     <Compile Include="Assets\Scripts\osuAPI\DataObjects\Game.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Assets\Scripts\osuAPI\Enums\TeamType.cs" />
     <Compile Include="Assets\Scripts\osuAPI\OsuAPI.cs" />
     <Compile Include="Assets\Scripts\OsuIRC\IrcClient.cs" />
+    <None Include="Assets\JsonDotNet\link.xml" />
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -96,6 +99,9 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Repos/ACTTournamentBot/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/null/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>

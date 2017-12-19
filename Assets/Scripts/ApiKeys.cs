@@ -1,4 +1,5 @@
 ﻿public class ApiKeys
  {
-     public const string GoogleApiKey = "get ur own";
+     internal const string GoogleApiKey = "get your own";
+     internal const string Oauth2ClientId = "get your own";
  }
