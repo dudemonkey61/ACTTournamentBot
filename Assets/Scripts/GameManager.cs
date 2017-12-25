@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             case GameStates.Setup:
                 break;
 
-            case GameStates.Inivtes:
+            case GameStates.Invites:
                 break;
 
             case GameStates.PlayerConfirmation:

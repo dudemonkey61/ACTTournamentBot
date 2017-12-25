@@ -1,7 +1,7 @@
 ﻿public enum GameStates
 {
     Setup,
-    Inivtes,
+    Invites,
     PlayerConfirmation,
     Greeting,
     Rolling,
