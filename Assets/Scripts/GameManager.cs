@@ -1,23 +1,24 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using GSheets;
 using OsuTournamentBot;
 
 public class GameManager : MonoBehaviour
 {
     public GameStates currentState;
     IrcClient mp1;
-    
+    readonly Spreadsheet sh = new Spreadsheet("https://docs.google.com/spreadsheets/d/1-8Ibp7Qnk6jKYGI4Voy2bWDBbegZQFgFmCfh0U5F30Q/edit#gid=0");
+    readonly List<string> x = new List<string> {"Value changed", "To something else!"};
+    private bool _xD = false;
+    private bool runonce = true;
 	void Start()
     {
-        Debug.Log("Start");
-        Spreadsheet sh = new Spreadsheet("https://docs.google.com/spreadsheets/d/1-8Ibp7Qnk6jKYGI4Voy2bWDBbegZQFgFmCfh0U5F30Q/edit#gid=0");
-        StartCoroutine(sh.GetValue("A1", "B1"));
-        List<string> x = new List<string>();
-        x.Add("Value changed");
-        x.Add("To something else!");
-        StartCoroutine(sh.WriteValue("A1", "B1", x));
-        StartCoroutine(sh.GetValue("a1", "b1"));
+        StartCoroutine(this.sh.GetValue("A1", "B1"));
+        //StartCoroutine(sh.WriteValue("A1", "B1", x));
+        this.sh.GetOAuth2Key();
+
+        // StartCoroutine(sh.GetValue("a1", "b1"));
         
         /* currentState = GameStates.Setup;
  
@@ -32,6 +33,20 @@ public class GameManager : MonoBehaviour
 	
 	void Update()
     {
+        if (ApiKeys.OAuth2Key != string.Empty)
+        {
+            this._xD = true;
+        }
+        
+        if (this._xD)
+        {
+            if (this.runonce == true)
+            {
+                this.runonce = false;
+                StartCoroutine(this.sh.WriteValue("A1", "B1", this.x));
+            }
+        }
+
         /*
         if(!mp1.tcpClient.Connected)
         {

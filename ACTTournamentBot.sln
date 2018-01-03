@@ -1,8 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B561ECC1-8F0F-D261-BC64-022F3A1C5F19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACTTournamentBot", "Assembly-CSharp.csproj", "{B561ECC1-8F0F-D261-BC64-022F3A1C5F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{8C7B43DF-7BBC-7AE3-9E4E-D459A10C2504}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACTTournamentBot", "Assembly-CSharp-Editor-firstpass.csproj", "{8C7B43DF-7BBC-7AE3-9E4E-D459A10C2504}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
