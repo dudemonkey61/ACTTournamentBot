@@ -33,7 +33,7 @@ namespace GSheets
                                 "&scope=https://www.googleapis.com/auth/drive " +
                                 "https://www.googleapis.com/auth/drive.file " +
                                 "https://www.googleapis.com/auth/drive.readonly " +
-                                "https://www.googleapis.com/auth/spreadsheets " +
+                                "https://www.googleapis.com/auth/drive.readonly " +
                                 "https://www.googleapis.com/auth/spreadsheets.readonly" +
                                 "&access_type=online" +
                                 "&prompt=consent" +
@@ -79,6 +79,7 @@ namespace GSheets
                                                     RequestToken();
                                                     
                                                 }
+                                                
                                                 // Deal with the OAuth Token.
                                                 else if (e.Request.Params.Get("access_token") != null)
                                                 {
@@ -86,14 +87,16 @@ namespace GSheets
                                                     string expiry = e.Request.Params.Get("expires_in");
                                                     string refresh = e.Request.Params.Get("refresh_token");
 
-                                                    Debug.Log(accesstoken);Debug.Log(expiry);Debug.Log(refresh);
+                                                    Debug.Log(accesstoken);
+                                                    Debug.Log(expiry);
+                                                    Debug.Log(refresh);
                                                     ApiKeys.OAuth2AccessToken = accesstoken;
                                                     ApiKeys.OAuth2TokenExpireTime = Convert.ToInt32(expiry);
                                                     ApiKeys.OAuth2ExpiryToken = refresh;
-                                                    
+
                                                     // At this point, the server is of no use anymore. Go Garbage Collection!
                                                     StopServer();
-                                                    
+
                                                 }
                                             };
             this._server.EndPoint = new IPEndPoint(IPAddress.Loopback, 4406);

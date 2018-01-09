@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -44,7 +43,7 @@ namespace GSheets {
 			var net = new WWW(apirequest);
 			yield return net;
 
-			var resp2 = JsonConvert.DeserializeObject<SpreadsheetValuesResponse>(net.text);
+			var resp2 = JsonUtility.FromJson<SpreadsheetValuesResponse>(net.text);
 
 			List<List<string>> x = resp2.Values;
 		
@@ -73,7 +72,7 @@ namespace GSheets {
 				Values = new List<List<string>> {values}
 			};
 			
-			var www = UnityWebRequest.Put(apirequest,JsonConvert.SerializeObject(response));
+			var www = UnityWebRequest.Put(apirequest,JsonUtility.ToJson(response));
 			www.SetRequestHeader("Authorization", "Bearer "+ ApiKeys.OAuth2AccessToken);
 			yield return www.SendWebRequest();
  
